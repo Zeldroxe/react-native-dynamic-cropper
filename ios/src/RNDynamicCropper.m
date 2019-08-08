@@ -90,6 +90,10 @@ RCT_EXPORT_METHOD(cropImage:(NSString *)path details:(NSDictionary *)details res
            [GlobalVars sharedGlobalVars].filePath = @"temp.jpg";
       }
     cropViewController.delegate = self;
+    cropViewController.customAspectRatio = CGSizeMake(1, 1);
+    cropViewController.aspectRatioLockEnabled=true ;
+    cropViewController.resetAspectRatioEnabled=false;
+    cropViewController.aspectRatioLockDimensionSwapEnabled=true;
     UINavigationController* contactNavigator = [[UINavigationController alloc] initWithRootViewController:cropViewController];
      [[self getRootVC] presentViewController:contactNavigator animated:NO completion:nil];
   });
